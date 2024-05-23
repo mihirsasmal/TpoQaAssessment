@@ -1,0 +1,29 @@
+{
+  "name": "tpoqaassessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihirsasmal/TpoQaAssessment.git"
+  },
+  "author": "Mihir Sasmal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mihirsasmal/TpoQaAssessment/issues"
+  },
+  "homepage": "https://github.com/mihirsasmal/TpoQaAssessment#readme",
+  "devDependencies": {
+    "cypress": "^13.10.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.12",
+    "@types/uuid": "^9.0.8",
+    "cypress-plugin-api": "^2.11.1",
+    "typescript": "^5.4.5"
+  }
+}
