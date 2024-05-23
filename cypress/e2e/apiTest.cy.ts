@@ -1,10 +1,10 @@
+import jsonPlaceHolderRoute from "../apiRoutes/jsonPlaceHolder.route";
+
 describe('Assessment 2- API Automation Test -1', () => {
 it('Get Test', () => {
 
-    cy.api({
-        url: 'https://jsonplaceholder.typicode.com/posts',
-        method: 'GET'
-      }).then((response)=>{
+    cy.api(jsonPlaceHolderRoute.getAllPosts())
+      .then((response)=>{
         expect(response.status).to.equal(200);
         expect(response.body.length).to.equal(100);
       })  
@@ -12,15 +12,12 @@ it('Get Test', () => {
 
   it('Post Test', () => {
 
-    cy.api({
-        url: 'https://jsonplaceholder.typicode.com/posts',
-        method: 'POST',
-        body:{
+    cy.api(jsonPlaceHolderRoute.createNewPost({
                 userId:101,
                 title:'POST Test user',
                 body:'Test User'
-        }
-      }).then((response)=>{
+        }))
+       .then((response)=>{
         expect(response.status).to.equal(201);
         expect(response.body.id).to.equal(101);
         expect(response.body.userId).to.equal(101);
@@ -31,16 +28,13 @@ it('Get Test', () => {
 
   it('Put Test', () => {
 
-    cy.api({
-        url: 'https://jsonplaceholder.typicode.com/posts/1',
-        method: 'PUT',
-        body:{
-                id:1,
+    cy.api(jsonPlaceHolderRoute.updatePost(
+         '1',{
                 userId:102,
                 title:'PUT Test user',
                 body:'Test User Updated'
-        }
-      }).then((response)=>{
+        }))
+        .then((response)=>{
         expect(response.status).to.equal(200);
         expect(response.body.id).to.equal(1);
         expect(response.body.userId).to.equal(102);
@@ -51,10 +45,8 @@ it('Get Test', () => {
 
   it('Delete Test', () => {
 
-    cy.api({
-        url: 'https://jsonplaceholder.typicode.com/posts/1',
-        method: 'DELETE'
-      }).then((response)=>{
+    cy.api(jsonPlaceHolderRoute.deletePost('1'))
+      .then((response)=>{
         expect(response.status).to.equal(200);
       })  
   });
