@@ -8,8 +8,6 @@ export default defineConfig({
     openMode: 0
   },
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    baseUrl: 'https://jsonplaceholder.typicode.com/posts',
   },
 });
