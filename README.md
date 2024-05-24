@@ -17,7 +17,7 @@ Cypress is used as automation tool to automate UI and API tests
 
 All the tests are located in `cypress/e2e` folder
 
-UI & API tests are under `UI` & `API` directory respectively 
+UI & API tests are under `UI` & `API` directory of `cypress/e2e` folder
 
 UI tests follows page object model pattern, it helps in test readbility and maintainability. 
 
@@ -30,7 +30,9 @@ All endpoints are available in `cypress/apiRoutes` directory
 Testdata are stored in `cypress/fixtures` folder
 
 `cypress/support` can contain any support utility function required in tests.
-Currently it has the default `commands.ts`. In future new custom command can be added here
+
+Currently it has the default `commands.ts`. In future new custom command can be added here.
+
 `e2e.ts` is a great place to put global configuration and behavior that modifies Cypress.
 
 `cypress.config.ts` has the basic configuration for this framework
