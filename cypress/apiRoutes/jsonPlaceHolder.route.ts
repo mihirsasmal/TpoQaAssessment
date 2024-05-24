@@ -1,21 +1,23 @@
+import apiRoute from "./genericApi.route";
+
 class jsonPlaceHolderApi {
 
     url= 'https://jsonplaceholder.typicode.com/posts';
 
     getAllPosts() {
-        return cy.api({ url: this.url, method: 'GET'});
+        return apiRoute.get(this.url);
     }
 
     createNewPost(requestbody:object) {
-        return cy.api({ url: this.url, method: 'POST', body:requestbody});
+        return apiRoute.post(this.url,requestbody);
     }
 
     updatePost(postId:string, requestbody:object) {
-        return cy.api({ url: `${this.url}/${postId}`, method: 'PUT', body:requestbody});
+        return apiRoute.put(`${this.url}/${postId}`, requestbody);
     }
 
     deletePost(postId:string){
-        return cy.api({ url: `${this.url}/${postId}`, method: 'DELETE'});
+        return apiRoute.delete(`${this.url}/${postId}`);
     }
 }
 
