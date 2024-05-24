@@ -1,5 +1,5 @@
-import amazonSearch from "../pageObjects/amazonSearch.page";
-import searchResult from "../pageObjects/amazonSearchResult.page";
+import amazonSearch from "../../pageObjects/amazonSearch.page";
+import searchResult from "../../pageObjects/amazonSearchResult.page";
 
 describe('Assessment 1- UI Automation Test', () => {
 

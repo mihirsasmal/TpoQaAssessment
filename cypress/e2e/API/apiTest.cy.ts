@@ -1,6 +1,7 @@
-import jsonPlaceHolderRoute from "../apiRoutes/jsonPlaceHolder.route";
+import jsonPlaceHolderRoute from "../../apiRoutes/jsonPlaceHolder.route";
 
 describe('Assessment 2- API Automation Test -1', () => {
+  
 it('Get Test', () => {
 
     jsonPlaceHolderRoute.getAllPosts()
